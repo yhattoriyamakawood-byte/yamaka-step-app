@@ -2044,7 +2044,7 @@ function renderStoryDetail(id){
       +'<div class="thought-bubble"><ul>'+step.thoughts.map(t=>`<li>${t}</li>`).join('')+'</ul></div></div></div>'
     )}
     ${CollapseBlock('sec-trouble',
-      '<span class="sh-icon" style="color:var(--amber);">'+ico('warning',17)+'</span>よくあるトラブル（'+step.troubles.length+'件）',
+      '<span class="sh-icon" style="color:var(--amber);">'+ico('warning',17)+'</span>よくあるミス（'+step.troubles.length+'件）',
       TroubleCard(step.troubles),
       '','color:var(--danger-ink);'
     )}
@@ -2139,7 +2139,7 @@ function renderConstructionDetail(id){
       '<div class="card"><p>'+linkTerms(step.whyImportant)+'</p></div>'
     )}
     ${CollapseBlock('sec-trouble',
-      '<span class="sh-icon" style="color:var(--amber);">'+ico('warning',17)+'</span>よくあるトラブル（'+step.troubles.length+'件）',
+      '<span class="sh-icon" style="color:var(--amber);">'+ico('warning',17)+'</span>よくあるミス（'+step.troubles.length+'件）',
       TroubleCard(step.troubles),
       '','color:var(--danger-ink);'
     )}
@@ -2383,7 +2383,7 @@ function renderTaskDetail(deptId, taskId){
     </div>
 
     <div class="section-block" id="sec-trouble">
-      <div class="section-heading cb-toggle" data-sid="sec-trouble-t" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;color:var(--danger-ink);"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon" style="color:var(--amber);">${ico('warning',17)}</span>よくあるトラブル（${task.troubles.length}件）</span><span id="sec-trouble-t-arr" class="cb-arr">▼</span></div>
+      <div class="section-heading cb-toggle" data-sid="sec-trouble-t" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;color:var(--danger-ink);"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon" style="color:var(--amber);">${ico('warning',17)}</span>よくあるミス（${task.troubles.length}件）</span><span id="sec-trouble-t-arr" class="cb-arr">▼</span></div>
       <div id="sec-trouble-t-body" style="display:none;">${TroubleCard(task.troubles)}</div>
     </div>
 
