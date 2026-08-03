@@ -2356,6 +2356,11 @@ function renderTaskDetail(deptId, taskId){
       </div>
     </div>
 
+    <div class="section-block" id="sec-materials">
+      <div class="section-heading cb-toggle" data-sid="sec-materials" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon">${ico('book',17)}</span>使用資料（サンプル）</span><span id="sec-materials-arr" class="cb-arr">▼</span></div>
+      <div id="sec-materials-body" style="display:none;"><div class="card"><div class="mat-scroll">${materials}</div></div></div>
+    </div>
+
     <div class="section-block" id="sec-faqs">
       <div class="section-heading cb-toggle" data-sid="sec-faqs" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;color:#1E40AF;"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon" style="color:#3B82F6;">${ico('help',17)}</span>よくある質問（${task.faqs?task.faqs.length:0}件）</span><span id="sec-faqs-arr" class="cb-arr">▼</span></div>
       <div id="sec-faqs-body" style="display:none;">
@@ -2375,11 +2380,6 @@ function renderTaskDetail(deptId, taskId){
         return '<div style="border-radius:var(--radius-lg);overflow:hidden;border:1.5px solid #DBEAFE;">'+items+'</div>';
       })()}
       </div>
-    </div>
-
-    <div class="section-block" id="sec-materials">
-      <div class="section-heading cb-toggle" data-sid="sec-materials" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon">${ico('book',17)}</span>使用資料（サンプル）</span><span id="sec-materials-arr" class="cb-arr">▼</span></div>
-      <div id="sec-materials-body" style="display:none;"><div class="card"><div class="mat-scroll">${materials}</div></div></div>
     </div>
 
     <div class="section-block" id="sec-trouble">
