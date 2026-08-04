@@ -307,7 +307,7 @@ body{
 .progress-strip .dot.on{background:var(--primary);}
 
 .section-block{scroll-margin-top:120px;}
-.section-block+.section-block{border-top:1px solid #9ca3af;}
+.section-block+.section-block{border-top:1px solid #d1d5db;}
 .section-heading{
   display:flex;align-items:center;gap:8px;padding:20px 16px 10px;font-size:14px;font-weight:700;
   font-family:'Zen Maru Gothic',sans-serif;color:#2563EB;
@@ -2071,8 +2071,8 @@ function renderStoryDetail(id){
           +'<div style="width:64px;height:64px;border-radius:50%;background:rgba(255,0,0,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">'
           +'<svg viewBox="0 0 24 24" width="28" height="28" fill="white"><polygon points="8,5 19,12 8,19"/></svg>'
           +'</div></div></div>'
-          +'<div class="hm-caption"><span>'+step.title.replace(/\[\[|\]\]/g,'')+' 解説動画</span>'
-          +'<span style="font-size:11px;color:var(--ink-faint);">▶ タップしてYouTubeで見る｜'+(step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】')+'</span></div>'
+          +'<div class="hm-caption" style="flex-direction:column;align-items:flex-start;margin:0 16px;padding:10px 14px;gap:3px;"><span>'+step.title.replace(/\[\[|\]\]/g,'')+' 解説動画</span>'
+          +'<span style="font-size:11px;color:var(--ink-faint);font-weight:400;">▶ タップしてYouTubeで見る｜'+(step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】')+'</span></div>'
         :(step.completion.heroImage
           ?'<div class="hero-media" style="margin:0 16px;">'
             +'<img src="'+step.completion.heroImage+'" style="width:100%;max-height:200px;object-fit:cover;display:block;border-radius:var(--radius-lg) var(--radius-lg) 0 0;" alt="'+step.completion.caption+'">'
@@ -2177,9 +2177,9 @@ function renderConstructionDetail(id){
           </div>
         </div>
       </div>
-      <div class="hm-caption">
+      <div class="hm-caption" style="flex-direction:column;align-items:flex-start;margin:0 16px;padding:10px 14px;gap:3px;">
         <span>${step.title.replace(/\[\[|\]\]/g,'')} 解説動画</span>
-        <span style="font-size:11px;color:var(--ink-faint);">▶ タップしてYouTubeで見る｜${step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】'}</span>
+        <span style="font-size:11px;color:var(--ink-faint);font-weight:400;">▶ タップしてYouTubeで見る｜${step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】'}</span>
       </div>
       ` : `
       <div class="hero-media">
