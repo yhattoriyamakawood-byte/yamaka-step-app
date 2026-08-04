@@ -2141,9 +2141,9 @@ function renderConstructionDetail(id){
     <div class="section-block" id="sec-media" style="padding-bottom:0;">
       ${step.youtube ? `
       <div onclick="window.open('https://www.youtube.com/watch?v='+encodeURIComponent('${step.youtube}'),'_blank')"
-         style="display:block;position:relative;border-radius:var(--radius-lg) var(--radius-lg) 0 0;overflow:hidden;cursor:pointer;text-decoration:none;">
+         style="display:block;position:relative;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;text-decoration:none;margin:0 16px;">
         <img src="https://img.youtube.com/vi/${step.youtube}/hqdefault.jpg"
-             style="width:100%;display:block;border-radius:var(--radius-lg) var(--radius-lg) 0 0;"
+             style="width:100%;max-height:180px;object-fit:cover;display:block;border-radius:var(--radius-lg);"
              alt="${step.title.replace(/\[\[|\]\]/g,'')} 解説動画">
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);">
           <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,0,0,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">
