@@ -2165,18 +2165,20 @@ function renderConstructionDetail(id){
 
     <div class="section-block" id="sec-media" style="padding-bottom:0;">
       ${step.youtube ? `
-      <div onclick="window.open('https://www.youtube.com/watch?v='+encodeURIComponent('${step.youtube}'),'_blank')"
-         style="display:block;position:relative;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;text-decoration:none;margin:0 16px;">
-        <img src="https://img.youtube.com/vi/${step.youtube}/hqdefault.jpg"
-             style="width:100%;max-height:180px;object-fit:cover;display:block;border-radius:var(--radius-lg);"
-             alt="${step.title.replace(/\[\[|\]\]/g,'')} 解説動画">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,0,0,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><polygon points="8,5 19,12 8,19"/></svg>
+      <div class="hero-media" style="overflow:hidden;">
+        <div onclick="window.open('https://www.youtube.com/watch?v='+encodeURIComponent('${step.youtube}'),'_blank')"
+           style="display:block;position:relative;cursor:pointer;text-decoration:none;">
+          <img src="https://img.youtube.com/vi/${step.youtube}/hqdefault.jpg"
+               style="width:100%;max-height:180px;object-fit:cover;display:block;"
+               alt="${step.title.replace(/\[\[|\]\]/g,'')} 解説動画">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);">
+            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,0,0,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><polygon points="8,5 19,12 8,19"/></svg>
+            </div>
           </div>
         </div>
+        <div class="hm-caption"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;">${step.title.replace(/\[\[|\]\]/g,'')} 解説動画<span style="font-size:11px;color:var(--ink-faint);font-weight:400;">　${step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】'}</span></span></div>
       </div>
-      <div class="hm-caption"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${step.title.replace(/\[\[|\]\]/g,'')} 解説動画｜${step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】'}</span></div>
       ` : `
       <div class="hero-media">
         <div class="hm-visual" style="--vis-bg:${CONST_VIS_PALETTE[idx]?.[0]||'#EEF4FF'};color:${CONST_VIS_PALETTE[idx]?.[1]||'#4171C4'};border-radius:var(--radius-lg) var(--radius-lg) 0 0;height:160px;">
