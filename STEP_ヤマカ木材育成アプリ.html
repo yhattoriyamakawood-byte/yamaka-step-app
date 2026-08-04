@@ -307,6 +307,7 @@ body{
 .progress-strip .dot.on{background:var(--primary);}
 
 .section-block{scroll-margin-top:120px;}
+.section-block+.section-block{border-top:1px solid var(--border);}
 .section-heading{
   display:flex;align-items:center;gap:8px;padding:20px 16px 10px;font-size:14px;font-weight:700;
   font-family:'Zen Maru Gothic',sans-serif;color:#2563EB;
@@ -2082,15 +2083,12 @@ function renderStoryDetail(id){
           +'<span style="font-size:56px;">'+ico(step.completion.emoji,56)+'</span></div>'
           +'<div class="hm-caption"><span>'+step.completion.caption+'</span>'
           +'<span style="font-size:11px;color:var(--ink-faint);">STEP '+(idx+1)+' / '+STORY_STEPS.length+'</span></div></div>');
+      var scenePreview=step.scene.slice(0,28)+'…';
       var overviewHtml=CollapseBlock('sec-overview',
-        '<span class="sh-icon">'+ico('pin',17)+'</span>概要',
+        '<span class="sh-icon">'+ico('pin',17)+'</span>概要<span style="font-size:11px;font-weight:400;color:var(--ink-faint);margin-left:6px;">'+scenePreview+'</span>',
         '<div class="card"><p>'+linkTerms(step.scene)+'</p></div>',
         heroHtml
       );
-      // open by default
-      overviewHtml=overviewHtml
-        .replace('id="sec-overview-arr" class="cb-arr">▼','id="sec-overview-arr" class="cb-arr" style="transform:rotate(180deg);">▼')
-        .replace('id="sec-overview-body" style="display:none;">','id="sec-overview-body">');
       return overviewHtml;
     })()}
     ${CollapseBlock('sec-exp',
