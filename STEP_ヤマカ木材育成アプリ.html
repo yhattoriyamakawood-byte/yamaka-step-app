@@ -2189,15 +2189,11 @@ function renderConstructionDetail(id){
       `}
     </div>
     ${(()=>{
-      var ob=CollapseBlock('sec-overview',
+      return CollapseBlock('sec-overview',
         '<span class="sh-icon">'+ico('hammer',17)+'</span>概要',
         '<div class="card"><p>'+linkTerms(step.whatDoing)+'</p></div>'
       +'<div class="card"><h3>'+ico('badge-check',15)+' ここをチェック！</h3><ul class="checklist">'+step.checks.map(c=>`<li>${linkTerms(c)}</li>`).join('')+'</ul></div>'
       );
-      ob=ob
-        .replace('id="sec-overview-arr" class="cb-arr">▼','id="sec-overview-arr" class="cb-arr" style="transform:rotate(180deg);">▼')
-        .replace('id="sec-overview-body" style="display:none;">','id="sec-overview-body">');
-      return ob;
     })()}
     ${CollapseBlock('sec-why',
       '<span class="sh-icon">'+ico('idea',17)+'</span>なぜ重要か',
@@ -2375,8 +2371,8 @@ function renderTaskDetail(deptId, taskId){
     </div>
 
     <div class="section-block" id="sec-overview">
-      <div class="section-heading cb-toggle" data-sid="sec-overview" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon">${ico('pin',17)}</span>概要</span><span id="sec-overview-arr" class="cb-arr" style="transform:rotate(180deg);">▼</span></div>
-      <div id="sec-overview-body" style="">
+      <div class="section-heading cb-toggle" data-sid="sec-overview" onclick="toggleSection(this.dataset.sid)" style="justify-content:space-between;cursor:pointer;user-select:none;"><span style="display:flex;align-items:center;gap:8px;"><span class="sh-icon">${ico('pin',17)}</span>概要</span><span id="sec-overview-arr" class="cb-arr">▼</span></div>
+      <div id="sec-overview-body" style="display:none;">
       <div class="card">
         <div class="meta-row"><span class="meta-label">目的</span><span class="meta-text">${linkTerms(task.purpose)}</span></div>
         <div class="meta-row"><span class="meta-label">ゴール</span><span class="meta-text">${linkTerms(task.goal)}</span></div>
