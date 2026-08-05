@@ -2071,7 +2071,7 @@ function renderStoryDetail(id){
           +'<div style="width:64px;height:64px;border-radius:50%;background:rgba(255,0,0,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">'
           +'<svg viewBox="0 0 24 24" width="28" height="28" fill="white"><polygon points="8,5 19,12 8,19"/></svg>'
           +'</div></div></div>'
-          +'<div class="hm-caption"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;">'+step.title.replace(/\[\[|\]\]/g,'')+' 解説動画<span style="font-size:11px;color:var(--ink-faint);font-weight:400;">　'+(step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】')+'</span></span></div>'
+          +'<div class="hm-caption" style="margin:0 16px;border-radius:0 0 var(--radius) var(--radius);"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;">'+step.title.replace(/\[\[|\]\]/g,'')+' 解説動画<span style="font-size:11px;color:var(--ink-faint);font-weight:400;">　'+(step.youtubeChannel||'ニッカちゃんねる【新築&amp;リフォーム】')+'</span></span></div>'
         :(step.completion.heroImage
           ?'<div class="hero-media" style="margin:0 16px;">'
             +'<img src="'+step.completion.heroImage+'" style="width:100%;max-height:200px;object-fit:cover;display:block;border-radius:var(--radius-lg) var(--radius-lg) 0 0;" alt="'+step.completion.caption+'">'
