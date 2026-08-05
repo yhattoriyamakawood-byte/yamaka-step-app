@@ -2199,13 +2199,13 @@ function renderConstructionDetail(id){
         .replace('id="sec-overview-body" style="display:none;">','id="sec-overview-body">');
       return ob;
     })()}
-    ${CollapseBlock('sec-faq',
-      '<span class="sh-icon">'+ico('help',17)+'</span>よくある質問',
-      '<div class="card">'+step.faq.map(f=>`<div class="faq-item"><p class="fq">Q. ${f.q}</p><p class="fa">A. ${linkTerms(f.a)}</p></div>`).join('')+'</div>'
-    )}
     ${CollapseBlock('sec-why',
       '<span class="sh-icon">'+ico('idea',17)+'</span>なぜ重要か',
       '<div class="card"><p>'+linkTerms(step.whyImportant)+'</p></div>'
+    )}
+    ${CollapseBlock('sec-faq',
+      '<span class="sh-icon">'+ico('help',17)+'</span>よくある質問',
+      '<div class="card">'+step.faq.map(f=>`<div class="faq-item"><p class="fq">Q. ${f.q}</p><p class="fa">A. ${linkTerms(f.a)}</p></div>`).join('')+'</div>'
     )}
     ${CollapseBlock('sec-trouble',
       '<span class="sh-icon" style="color:var(--amber);">'+ico('warning',17)+'</span>よくあるミス（'+step.troubles.length+'件）',
