@@ -1946,7 +1946,7 @@ function renderBizFlow(){
   const storyContent = STORY_STEPS.map((s,i) => `
     <div class="tl-item ${visitedStory.has(s.id)?'visited':''}" onclick="go('#/story/${s.id}')">
       <div class="tl-rail">
-        <div class="tl-dot" style="background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};">${ico(s.emoji,19)}</div>
+        <div class="tl-dot" style="${s.completion?.heroImage?'background:none;border:none;padding:0;overflow:hidden;border-radius:10px;':`background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};`}">${s.completion?.heroImage?`<img src="${s.completion.heroImage}" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px;" alt="">`:ico(s.emoji,19)}</div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-body">
@@ -1994,7 +1994,7 @@ function renderStoryList(){
   const items = STORY_STEPS.map((s,i) => `
     <div class="tl-item ${visitedStory.has(s.id)?'visited':''}" onclick="go('#/story/${s.id}')">
       <div class="tl-rail">
-        <div class="tl-dot" style="background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};">${ico(s.emoji,19)}</div>
+        <div class="tl-dot" style="${s.completion?.heroImage?'background:none;border:none;padding:0;overflow:hidden;border-radius:10px;':`background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};`}">${s.completion?.heroImage?`<img src="${s.completion.heroImage}" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px;" alt="">`:ico(s.emoji,19)}</div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-body">
