@@ -1945,10 +1945,6 @@ function renderBizFlow(){
   const isStory = bizflowTab === 'story';
   const storyContent = STORY_STEPS.map((s,i) => `
     <div class="tl-item ${visitedStory.has(s.id)?'visited':''}" onclick="go('#/story/${s.id}')">
-      <div class="tl-rail">
-        <div class="tl-dot" style="background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};">${ico(s.emoji,19)}</div>
-        <div class="tl-line"></div>
-      </div>
       <div class="tl-body" style="padding:0;overflow:hidden;gap:0;${(s.completion?.heroImage||s.youtube)?'flex-direction:row;':''} ">
         ${(s.completion?.heroImage||s.youtube)?`<img src="${s.youtube?`https://img.youtube.com/vi/${s.youtube}/mqdefault.jpg`:s.completion.heroImage}" style="width:96px;height:72px;object-fit:cover;flex-shrink:0;border-radius:var(--radius) 0 0 var(--radius);" alt="">`:''}
         <div style="padding:13px 14px;flex:1;">
@@ -1994,10 +1990,6 @@ function renderBizFlow(){
 function renderStoryList(){
   const items = STORY_STEPS.map((s,i) => `
     <div class="tl-item ${visitedStory.has(s.id)?'visited':''}" onclick="go('#/story/${s.id}')">
-      <div class="tl-rail">
-        <div class="tl-dot" style="background:${STORY_VIS_PALETTE[i]?.[0]||'#E8F1FD'};border:none;color:${STORY_VIS_PALETTE[i]?.[1]||'#2563EB'};">${ico(s.emoji,19)}</div>
-        <div class="tl-line"></div>
-      </div>
       <div class="tl-body" style="padding:0;overflow:hidden;gap:0;${(s.completion?.heroImage||s.youtube)?'flex-direction:row;':''} ">
         ${(s.completion?.heroImage||s.youtube)?`<img src="${s.youtube?`https://img.youtube.com/vi/${s.youtube}/mqdefault.jpg`:s.completion.heroImage}" style="width:96px;height:72px;object-fit:cover;flex-shrink:0;border-radius:var(--radius) 0 0 var(--radius);" alt="">`:''}
         <div style="padding:13px 14px;flex:1;">
